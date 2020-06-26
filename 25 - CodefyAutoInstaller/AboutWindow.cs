@@ -22,6 +22,17 @@ namespace CodefyAutoInstaller
         {
             string certName = Constants.TEMP_DIRECTORY + Constants.CERTIFICATE_NAME;
 
+            X509Store store = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
+            try
+            {
+                store.Open(OpenFlags.ReadWrite);
+            }
+            catch (System.Security.Cryptography.CryptographicException)
+            {
+                MessageBox.Show("Codefy Installer was not able to access this computer's certificate store. Please run this application with administrator privileges!", "Permission Error");
+                return;
+            }
+
             using (Downloader downloader = new Downloader(Constants.CERTIFICATE_URL))
             {
                 try
@@ -35,24 +46,12 @@ namespace CodefyAutoInstaller
                 }
             }
 
-            X509Store store = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
-            try
-            {
-                store.Open(OpenFlags.ReadWrite);
-            }
-            catch (System.Security.Cryptography.CryptographicException)
-            {
-                MessageBox.Show("Codefy Installer was not able to access this computer's certificate store. Please run this application with administrator privileges!", "Permission Error");
-                return;
-            }
-            X509Certificate2 cert = new X509Certificate2(certName);
-            store.Add(cert);
+            store.Add(new X509Certificate2(certName));
             store.Close();
 
-            MessageBox.Show("Codefy's root certificate has been successfully installed on this computer!", "Installation Success");
+            File.Delete(certName);
 
-            if (File.Exists(certName))
-                File.Delete(certName);
+            MessageBox.Show("Codefy's root certificate has been successfully installed on this computer!", "Installation Success");
         }
     }
 }
