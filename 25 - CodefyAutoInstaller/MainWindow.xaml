@@ -1,0 +1,32 @@
+﻿<Window x:Name="Window" x:Class="CodefyAutoInstaller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodefyAutoInstaller"
+        mc:Ignorable="d"
+        Title="Codefy Installer" Height="450" Width="800" BorderBrush="White" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/codefybackgroundimage.png"/>
+        </Grid.Background>
+        <Grid HorizontalAlignment="Left" Height="88" Margin="10,312,0,0" VerticalAlignment="Top" Width="642" Background="#FF003051" Opacity="0.7"/>
+        <Grid HorizontalAlignment="Left" Height="285" Margin="10,10,0,0" VerticalAlignment="Top" Width="224" Background="#FF003051" Opacity="0.5"/>
+        <Button x:Name="InstallScratchBasic" Content="Scratch (Basic)" HorizontalAlignment="Left" Margin="28,23,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FFE27E05" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallScratchBasic_Click"/>
+        <Button x:Name="InstallJavaBasic" Content="Java (Basic)" HorizontalAlignment="Left" Margin="28,112,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FF8633EA" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallJavaBasic_Click"/>
+        <Button x:Name="InstallJavaAdvanced" Content="Java (Advanced)" HorizontalAlignment="Left" Margin="28,203,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FF8633EA" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallJavaAdvanced_Click"/>
+        <Button x:Name="InstallPythonBasic" Content="Python (Basic)" HorizontalAlignment="Left" Margin="28,321,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FFB2B91E" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallPythonBasic_Click"/>
+        <Button x:Name="InstallPythonAdvanced" Content="Python (Advanced)" HorizontalAlignment="Left" Margin="235,321,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FFB2B91E" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallPythonAdvanced_Click"/>
+        <Button x:Name="InstallWebDevelopment" Content="Web Development" HorizontalAlignment="Left" Margin="444,321,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FF1964BD" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallWebDevelopment_Click"/>
+        <Grid HorizontalAlignment="Left" Height="116" Margin="234,179,0,0" VerticalAlignment="Top" Width="418" Background="#FF003051" Opacity="0.5"/>
+        <Button x:Name="AboutButton" Content="About" HorizontalAlignment="Left" Margin="444,203,0,0" VerticalAlignment="Top" Width="185" Height="67" Background="#FF232323" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF0F5A76" Click="AboutButton_Click"/>
+        <Image Margin="671,312,19,10" Source="Resources/codefylogo.png" Stretch="Fill"/>
+        <Grid HorizontalAlignment="Left" Height="121" Margin="397,23,0,0" VerticalAlignment="Top" Width="378" Background="#FF1D1D1D" Opacity="0.9">
+            <TextBox x:Name="Description" HorizontalAlignment="Left" Height="65" Margin="10,51,0,0" TextWrapping="Wrap" Text="This program is designed to help you install required software for our classes. Click on your class to begin!" VerticalAlignment="Top" Width="358" SpellCheck.IsEnabled="True" FontSize="14" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" SelectionBrush="{x:Null}" IsReadOnly="True"/>
+        </Grid>
+        <Label x:Name="Title" Content="Welcome to the Codefy Installer!" HorizontalAlignment="Left" Margin="458,38,0,0" VerticalAlignment="Top" Foreground="White" FontSize="17" Width="259"/>
+        <Button x:Name="InstallJavaAdvanced_Copy" Content="Java (Advanced)" HorizontalAlignment="Left" Margin="28,203,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FF8633EA" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallJavaAdvanced_Click"/>
+        <Button x:Name="InstallWebApplications" Content="Web Applications" HorizontalAlignment="Left" Margin="235,203,0,0" VerticalAlignment="Top" Width="189" Height="67" Background="#FF1964BD" FontFamily="Open sans" FontSize="18" Foreground="White" BorderBrush="#FF5B5B5B" Click="InstallWebApplications_Click"/>
+
+    </Grid>
+</Window>
